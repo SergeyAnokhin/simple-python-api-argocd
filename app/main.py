@@ -8,7 +8,7 @@ app.include_router(items.router, prefix="/items")
 
 @app.get("/")
 def root():
-    return {"status": "ok", "version": "1.0.0"}
+    return {"status": "ok", "version": "1.0.1"}
 
 
 @app.get("/health")
