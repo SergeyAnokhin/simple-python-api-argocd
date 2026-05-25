@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: simple-python-api-argocd
-          image: ghcr.io/sergeyanokhin/simple-python-api-argocd:sha-b2e860a
+          image: ghcr.io/sergeyanokhin/simple-python-api-argocd:sha-267ce88
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
