@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-python-api-argocd
+  namespace: simple-python-api-argocd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-python-api-argocd
+  template:
+    metadata:
+      labels:
+        app: simple-python-api-argocd
+    spec:
+      containers:
+        - name: simple-python-api-argocd
+          image: ghcr.io/SergeyAnokhin/simple-python-api-argocd:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 15

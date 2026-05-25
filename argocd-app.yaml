@@ -1,0 +1,19 @@
+# Применить вручную один раз: kubectl apply -f argocd-app.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: simple-python-api-argocd
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/SergeyAnokhin/simple-python-api-argocd
+    targetRevision: main
+    path: k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: simple-python-api-argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
