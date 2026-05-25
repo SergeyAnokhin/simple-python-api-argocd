@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: simple-python-api-argocd
-  namespace: simple-python-api-argocd
+  namespace: tests
 spec:
   type: NodePort
   selector:

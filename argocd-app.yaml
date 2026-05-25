@@ -12,7 +12,7 @@ spec:
     path: k8s
   destination:
     server: https://kubernetes.default.svc
-    namespace: simple-python-api-argocd
+    namespace: tests 
   syncPolicy:
     automated:
       prune: true

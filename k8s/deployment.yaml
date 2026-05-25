@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: simple-python-api-argocd
-  namespace: simple-python-api-argocd
+  namespace: tests
 spec:
   replicas: 1
   selector:
